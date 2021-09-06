@@ -6,7 +6,7 @@
         <div class="login-form">
             <form [formGroup]="profileForm" (ngSubmit)="onSubmitUser()">
                 <div><input type="text" id="user-name" formControlName="userName" placeholder="Username"></div>
-                <div><input type="text" id="password" formControlName="password" placeholder="Password"></div>
+                <div><input type="password" id="password" formControlName="password" placeholder="Password"></div>
                 <div><button type="submit">Submit</button></div>
             </form>
         </div>
@@ -20,7 +20,4 @@
             <div><button (click)="onSubmitGame()">Join Game</button></div>
         </div>
     </div>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>

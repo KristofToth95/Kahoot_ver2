@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../model/auth.service';
 
 @Component({
   selector: 'app-main-menu',
@@ -10,17 +12,25 @@ export class MainMenuComponent {
 
   gameCode = new FormControl('');
   profileForm = new FormGroup({
-    userName: new FormControl(''),
-    password: new FormControl('')
+    userName: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required])
   });
+
   login_active: Boolean = false;
   play_active: Boolean = false;
   @ViewChild('login_slider', { static: false }) login_slider: ElementRef;
   @ViewChild('play_slider', { static: false }) play_slider: ElementRef;
-  constructor(private renderer: Renderer2) { }
+
+  constructor(private renderer: Renderer2, private auth: AuthService, private router: Router) { }
 
   onSubmitUser() {
-    console.warn(this.profileForm.value);
+    this.auth.authenticate(this.profileForm.value.userName, this.profileForm.value.password)
+    .subscribe(response => {
+      if(response){
+        this.router.navigateByUrl("/admin");
+      }
+      console.warn("Authentivation Failed");
+    })   
   }
   onSubmitGame() {
     console.warn(this.gameCode);
