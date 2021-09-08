@@ -5,19 +5,22 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainMenuModule } from './main-menu/main-menu.module';
 import { IonicModule } from '@ionic/angular';
-import { UserPageComponent } from './user-page/user-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserPageModule } from './user-page/user-page.module';
+import { ModelModule } from './model/model.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MainMenuModule,
+    UserPageModule,
+    ModelModule,
     IonicModule.forRoot(),
     HttpClientModule
   ],
