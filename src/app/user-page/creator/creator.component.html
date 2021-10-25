@@ -1,0 +1,50 @@
+<form [formGroup]="slideForm2">
+    <div formArrayName="slides">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2">
+                    <button class="save-button" (click)="saveForm()">Save</button>
+                    <div *ngFor="let slide of slides.controls; let i=index">
+                        <div [class.active]="slideNum === i" class="slide" [formGroupName]="i" (click)="changeSlide(i)">
+                            <div>{{i}}</div>
+                            <label>{{slide.value['question']}}</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" (click)="addSlide()">Add slide</button>
+                </div>
+                <div class="col-8">
+                    <div [formGroupName]="slideNum" class="form-group">
+                        <div class="question">
+                            <input id="q" class="form-control" type="text" [formControl]="slides.controls[slideNum].get('question')" placeholder="Write your question here">
+                        </div>
+                        <div class="answers" formArrayName="options">
+                            <div class="option" *ngFor="let option of options.controls; let i = index">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div id="check" class="col-1">
+                                            <div (click)="correctOption(i)" [ngClass]="[option.value['correct'] === 'true' ? 'active' : '!active']">
+                                                <ion-icon name="checkmark-outline"></ion-icon>
+                                            </div>
+                                        </div>
+                                        <div [formGroupName]="i" class="form-group col-10">
+                                            <input class="form-control" id="option-{{ i }}" type="text" formControlName="text" placeholder="Type your option here">
+                                        </div>
+                                        <div id="thrash" class="col-1">
+                                            <div (click)="removeOption(i)">
+                                                <ion-icon name="trash-outline"></ion-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="option-button" (click)="addOption()">Add Option</button>
+                    </div>
+                </div>
+                <div class="col-2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,13 @@
+<body>
+    <div class="top-bar">
+        <div class="game-pin">
+            <div class="label">GamePin:</div>
+            <div class="game-id">{{game.id}}</div>
+        </div>
+    </div>
+    <div class="lobby">
+        <div *ngFor="let user of users; let i = index">
+            <div class="users">{{user.name}}</div>
+        </div>
+    </div>
+</body>

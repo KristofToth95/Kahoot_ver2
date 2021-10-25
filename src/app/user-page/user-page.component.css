@@ -1,3 +1,177 @@
 body {
     background: #232c33;
+    position: relative;
+}
+
+.home-page {
+    position: relative;
+    height: inherit;
+    width: inherit;
+}
+
+hr {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    width: 450px;
+    border-top: 2px solid white;
+}
+
+.home-page .instructions {
+    top: 10%;
+    left: 35%;
+    position: relative;
+    display: block;
+    color: white;
+    height: 20vh;
+    padding: 10px;
+    width: 30vw;
+    background-color: #204c94;
+    border-radius: 5px;
+}
+
+.home-page .instructions .buttons {
+    display: block;
+    position: relative;
+    top: 80%
+}
+
+.home-page .instructions .buttons .play-button {
+    position: absolute;
+    left: 3%;
+    background-color: #4187f6;
+    color: white;
+    padding: 2px;
+    height: 2em;
+    border: solid 3px white;
+    border-radius: 10px;
+}
+
+.home-page .instructions .buttons .create-button {
+    position: absolute;
+    left: 41%;
+    background-color: #4187f6;
+    color: white;
+    padding: 2px;
+    height: 2em;
+    border: solid 3px white;
+    border-radius: 10px;
+}
+
+.home-page .instructions .buttons .host-button {
+    position: absolute;
+    left: 76%;
+    background-color: #4187f6;
+    color: white;
+    padding: 2px;
+    height: 2em;
+    border: solid 3px white;
+    border-radius: 10px;
+}
+
+#modal {
+    width: inherit;
+}
+
+.home-page .instructions .play {
+    position: absolute;
+    border: solid;
+    top: 20%;
+    background-color: #4187f6;
+    left: 8%;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.home-page .instructions .play ion-icon {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    left: 15px;
+}
+
+.home-page .instructions .create {
+    position: absolute;
+    border: solid;
+    top: 20%;
+    left: 43%;
+    background-color: #4187f6;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.home-page .instructions .create ion-icon {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    left: 15px;
+}
+
+.home-page .instructions .host {
+    position: absolute;
+    border: solid;
+    top: 20%;
+    /* left: 78%; */
+    background-color: #4187f6;
+    right: 10%;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.home-page .instructions .host ion-icon {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    left: 13px;
+}
+
+.home-page .games {
+    position: relative;
+    top: 20%;
+    left: 40%;
+    width: 20vw;
+    border: solid;
+}
+
+.games th {
+    border-bottom: solid;
+    width: inherit;
+    font-size: 30px;
+    height: 1.5em;
+    padding-left: 10px;
+    color: white;
+    background-color: #204c94;
+}
+
+.games tr {
+    color: white;
+    background-color: #4187f6;
+    height: 2em;
+}
+
+.games tr .game-name {
+    padding-left: 10px;
+}
+
+.games tr .edit {
+    text-align: center;
+}
+
+.games tr td .edit-button {
+    background-color: #4187f6;
+    color: white;
+    padding: 2px;
+    height: 2em;
+    width: 50%;
+    border: solid 3px white;
+    border-radius: 10px;
 }

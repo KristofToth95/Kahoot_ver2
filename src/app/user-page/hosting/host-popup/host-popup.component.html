@@ -1,0 +1,11 @@
+<div #myModal class="container">
+    <div class="content">
+        <table class="games">
+            <th colspan="2">Which game would you like to host?</th>
+            <tr *ngFor="let game of games; let i = index">
+                <td class="game-name">{{game.name}}</td>
+                <td class="edit"><button class="edit-button" (click)="host(game.id)">Host</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,4 +1,31 @@
 <body>
-    <user-navigation></user-navigation>
-    <router-outlet></router-outlet>
+    <div class="home-page">
+        <host-popup #modal></host-popup>
+        <div class="instructions">
+            <div class="icons">
+                <div class="play">
+                    <ion-icon name="play"></ion-icon>
+                </div>
+                <div class="create">
+                    <ion-icon name="create"></ion-icon>
+                </div>
+                <div class="host">
+                    <ion-icon name="phone-portrait"></ion-icon>
+                </div>
+                <hr class="line">
+            </div>
+            <div class="buttons">
+                <button class="play-button">Play demo game</button>
+                <button class="create-button" routerLink="/creator/create">Create game</button>
+                <button class="host-button" (click)="openModal()">Host game</button>
+            </div>
+        </div>
+        <table class="games">
+            <th colspan="2">Collections</th>
+            <tr *ngFor="let game of games; let i = index">
+                <td class="game-name">{{game.name}}</td>
+                <td class="edit"><button class="edit-button" (click)="editGame(game)">Edit</button></td>
+            </tr>
+        </table>
+    </div>
 </body>

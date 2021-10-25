@@ -1,26 +1,33 @@
+import { User } from "./user.model";
 
 export class Game {
+    
     public id?: number;
     public owner?: string;
     public name?: string;
     public questions: Question[] = [];
-    public answers: Answer[] = [];
+    public users?: User[] = []; 
 
-    addQuestion(question: Question, answer: Answer) {
+    addQuestion(question: Question) {
         this.questions.push(question);
-        answer.questionId = this.questions.length - 1;
-        this.answers.push(answer);
     }
+
+    // addUser(user: User){
+    //     let t = this.users.find(u => u.id == user.id);
+    //     if(t == null || t == undefined){
+    //         this.users.push(user);
+    //     }
+    // }
 }
 export class Question {
     constructor(
         public question?: string,
-        public options?: string[]
+        public options: Answer[] = []
     ) { }
 }
 export class Answer {
     constructor(
-        public questionId?: number,
-        public optionNum?: number
+        public text: string,
+        public correctAnswer: boolean = false
     ) { }
 }

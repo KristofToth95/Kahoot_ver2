@@ -1,0 +1,56 @@
+body {
+    background-color: #232c33;
+}
+
+.top-bar {
+    border-bottom: solid white;
+    height: 20vh;
+    background-color: #204c94;
+    position: relative;
+}
+
+.top-bar .game-pin {
+    position: absolute;
+    border-radius: 10px;
+    top: 25%;
+    left: 30%;
+    height: 50%;
+    width: 40%;
+    background-color: #4187f6;
+    border: solid 5px white;
+}
+
+.top-bar .game-pin .label {
+    font-size: 8vh;
+    display: block;
+    height: fit-content;
+    float: left;
+    line-height: 8vh;
+    margin: none;
+    color: white;
+    padding-left: 5%;
+}
+
+.top-bar .game-pin .game-id {
+    font-size: 8vh;
+    display: block;
+    height: fit-content;
+    float: left;
+    padding-left: 20px;
+    line-height: 8vh;
+    margin: none;
+    color: white;
+}
+
+.lobby .users {
+    display: block;
+    float: left;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #4187f6;
+    border: solid 3px;
+    font-weight: bold;
+}

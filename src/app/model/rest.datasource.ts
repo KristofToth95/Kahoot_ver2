@@ -15,7 +15,9 @@ export class RestDataSource {
     constructor(private http: HttpClient) {
         this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
     }
-
+    registration(user: any){
+        return this.http.post('https://localhost:44313/api/ApplicationUser/Register', user)
+    }
     authenticate(user: string, pass: string): Observable<boolean> {
         return this.http.post<any>(this.baseUrl + "login", {
             name: user, password: pass
