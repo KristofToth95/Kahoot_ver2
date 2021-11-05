@@ -1,0 +1,42 @@
+body {
+    background-color: #272727;
+    font-family: sans-serif;
+}
+
+.flag {
+    padding: 40px;
+    text-align: center;
+    background: #2e3137;
+    margin: 50px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+}
+
+.flag .pin {
+    color: white;
+    font-size: 5vh;
+    font-weight: 300;
+}
+
+.lobby {
+    display: block;
+    margin: auto;
+    background: #2e3137;
+    color: white;
+    width: 70%;
+    min-height: 60%;
+    padding: 20px;
+    top: 20%;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+}
+
+.lobby .wrapper {
+    display: block;
+    float: left;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #04c582;
+    outline: none;
+    border-radius: 25px;
+}

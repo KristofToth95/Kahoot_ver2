@@ -1,5 +1,5 @@
 body {
-    background: #232c33;
+    background: #272727;
     position: relative;
 }
 
@@ -26,8 +26,9 @@ hr {
     height: 20vh;
     padding: 10px;
     width: 30vw;
-    background-color: #204c94;
-    border-radius: 5px;
+    background-color: #2e3137;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
 }
 
 .home-page .instructions .buttons {
@@ -36,37 +37,26 @@ hr {
     top: 80%
 }
 
-.home-page .instructions .buttons .play-button {
+.home-page .instructions .buttons button {
     position: absolute;
-    left: 3%;
-    background-color: #4187f6;
+    background: none;
     color: white;
-    padding: 2px;
+    padding: 5px;
     height: 2em;
-    border: solid 3px white;
-    border-radius: 10px;
-}
-
-.home-page .instructions .buttons .create-button {
-    position: absolute;
-    left: 41%;
-    background-color: #4187f6;
-    color: white;
-    padding: 2px;
-    height: 2em;
-    border: solid 3px white;
-    border-radius: 10px;
+    border: solid 3px #04c582;
+    border-radius: 25px;
 }
 
 .home-page .instructions .buttons .host-button {
-    position: absolute;
     left: 76%;
-    background-color: #4187f6;
-    color: white;
-    padding: 2px;
-    height: 2em;
-    border: solid 3px white;
-    border-radius: 10px;
+}
+
+.home-page .instructions .buttons .create-button {
+    left: 41%;
+}
+
+.home-page .instructions .buttons .play-button {
+    left: 3%;
 }
 
 #modal {
@@ -75,9 +65,9 @@ hr {
 
 .home-page .instructions .play {
     position: absolute;
-    border: solid;
+    border: solid #04c582;
     top: 20%;
-    background-color: #4187f6;
+    background: #2e3137;
     left: 8%;
     height: 80px;
     width: 80px;
@@ -95,10 +85,10 @@ hr {
 
 .home-page .instructions .create {
     position: absolute;
-    border: solid;
+    border: solid #04c582;
     top: 20%;
     left: 43%;
-    background-color: #4187f6;
+    background: #2e3137;
     height: 80px;
     width: 80px;
     border-radius: 50%;
@@ -115,10 +105,10 @@ hr {
 
 .home-page .instructions .host {
     position: absolute;
-    border: solid;
+    border: solid #04c582;
     top: 20%;
     /* left: 78%; */
-    background-color: #4187f6;
+    background: #2e3137;
     right: 10%;
     height: 80px;
     width: 80px;

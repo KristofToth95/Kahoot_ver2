@@ -1,10 +1,13 @@
+import * as internal from "stream";
 import { User } from "./user.model";
 
 export class Game {
     
-    public id?: number;
-    public owner?: string;
+    public gameID?: number;
+    public applicationUserID?: string;
     public name?: string;
+    public canJoin: boolean;
+    public isStarted:boolean;
     public questions: Question[] = [];
     public users?: User[] = []; 
 
@@ -20,14 +23,16 @@ export class Game {
     // }
 }
 export class Question {
-    constructor(
-        public question?: string,
-        public options: Answer[] = []
-    ) { }
+    public questionID?: number;
+    public text: string;
+    public options: Answer[] = [];
+    public gameID?: number;
 }
 export class Answer {
     constructor(
         public text: string,
-        public correctAnswer: boolean = false
+        public correctAns?: boolean,
+        public answerID?: number,
+        public questionID?: number
     ) { }
 }

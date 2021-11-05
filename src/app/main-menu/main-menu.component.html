@@ -1,66 +1,16 @@
-<div class="wrapper">
-    <div class="wrapped-div">
-        <div class="tab-header">
-            <h2 routerLink='/start/login' routerLinkActive='active'>Sign In</h2>
-            <h2 routerLink='/start/registration' routerLinkActive='active'>Sign Up</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-                <router-outlet></router-outlet>
+<body>
+    <div class="wrapper">
+        <div class="wrapped-div">
+            <div class="tab-header">
+                <h2 routerLink='/start/login' routerLinkActive='active'>Sign In</h2>
+                <h2 routerLink='/start/play' routerLinkActive='active'>Play</h2>
+                <h2 routerLink='/start/registration' routerLinkActive='active'>Sign Up</h2>
             </div>
-        </div>
-    </div>
-</div>
-
-<!-- <body>
-    <div #login_slider class="login-slider">
-        <div class="login-button" (click)="loginButtonClick()">
-            <ion-icon name="log-in-outline"></ion-icon>
-        </div>
-        <div class="login-form">
-            <form [formGroup]="profileForm" (ngSubmit)="onSubmitUser()">
-                <div><input type="text" id="user-name" formControlName="userName" placeholder="Username"></div>
-                <div><input type="password" id="password" formControlName="password" placeholder="Password"></div>
-                <div><button type="submit">Submit</button></div>
-            </form>
-        </div>
-    </div>
-    <div #play_slider class="play-slider">
-        <div class="play-button" (click)="playButtonClick()">
-            <ion-icon name="game-controller-outline"></ion-icon>
-        </div>
-        <div class="play-form">
-            <div><input type="text" id="game-code" [formControl]="gameCode" placeholder="Game code"></div>
-            <div><button (click)="onSubmitGame()">Join Game</button></div>
-        </div>
-    </div>
-    <div class="registration-form">
-        <form [formGroup]="registrationForm" autocomplete="off" (submit)="onSubmitRegistration()">
-            <div class="form-group required">
-                <label>Username</label>
-                <input class="form-control" formControlName="UserName">
-            </div>
-            <div class="form-group">
-                <label>Full Name</label>
-                <input class="form-control" formControlName="FullName">
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input class="form-control" formControlName="Email">
-            </div>
-            <div formGroupName="Passwords">
-                <div class="form-group required">
-                    <label>Password</label>
-                    <input type="password" class="form-control" formControlName="Password">
-                    <div class="form-group required">
-                        <label>Confirm Password</label>
-                        <input type="password" class="form-control" formControlName="ConfirmPassword">
-                    </div>
+            <div class="row">
+                <div class="content">
+                    <router-outlet></router-outlet>
                 </div>
             </div>
-            <div class="form-row">
-                <button type="submit" [disabled]="!registrationForm.valid">Sign Up</button>
-            </div>
-        </form>
+        </div>
     </div>
-</body> -->
+</body>

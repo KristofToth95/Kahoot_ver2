@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Game } from "src/app/model/game.model";
-import { Model } from "src/app/model/repository.model";
+import { Game } from "src/app/model/shared/game.model";
+import { Model } from "src/app/model/admin-model/repository.model";
 
 @Component({
     selector: 'hosting',

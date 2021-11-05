@@ -1,0 +1,16 @@
+<body>
+    <ng-container *ngIf="questions">
+        <div class="flag">
+            <div class="question">
+                <label>{{getQuestion}}</label>
+            </div>
+        </div>
+        <div class="options">
+            <div class="wrapper" [class.disabled]="selectedOption" [class.selected]="option === selectedOption" *ngFor="let option of getOptions; let i = index" (click)="chooseAnswer(option)">
+                <label [class.disabled]="selectedOption">{{option.text}}</label>
+            </div>
+        </div>
+        <button (click)="nextQuestion()">Next Question</button>
+    </ng-container>
+
+</body>

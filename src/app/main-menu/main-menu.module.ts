@@ -6,6 +6,11 @@ import { ModelModule } from '../model/model.module';
 import { LoginComponent } from './login/login.component';
 import { PlayComponent } from './play/play.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [MainMenuComponent, LoginComponent, PlayComponent, RegistrationComponent],
@@ -13,7 +18,15 @@ import { RegistrationComponent } from './registration/registration.component';
     CommonModule,
     ReactiveFormsModule,
     ModelModule,
-    FormsModule
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    RouterModule,
+    HttpClientModule,
+    FormsModule,
+    ToastrModule.forRoot({
+      progressBar:true
+    })
   ],
   exports: [MainMenuComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

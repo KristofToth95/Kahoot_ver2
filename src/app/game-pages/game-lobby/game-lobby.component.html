@@ -1,0 +1,19 @@
+<body>
+    <div class="flag">
+        <div class="pin">
+            <label>Game Code: {{GameID}}</label>
+        </div>
+    </div>
+    <div class="lobby">
+        <div class="wrapper" *ngFor="let user of users; let i = index">
+            <div class="users">{{user.playerName}}</div>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="start()">Start</button>
+</body>
+<!-- <div *ngFor="let question of questions">
+    {{question.text}}
+    <div *ngFor="let option of question.option; let">
+        {{option.text}}
+    </div>
+</div> -->

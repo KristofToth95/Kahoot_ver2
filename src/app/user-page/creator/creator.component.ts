@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { Form, FormArray, FormBuilder, FormControl, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Answer, Game, Question } from "src/app/model/game.model";
-import { Model } from "src/app/model/repository.model";
+import { Answer, Game, Question } from "src/app/model/shared/game.model";
+import { Model } from "src/app/model/admin-model/repository.model";
 
 @Component({
     selector: 'creator',
@@ -19,7 +19,7 @@ export class CreatorComponent {
         slides: this.fb.array([
             this.fb.group({
                 question: '',
-                options: this.fb.array([])
+                option: this.fb.array([])
             })
         ])
     });
@@ -41,9 +41,9 @@ export class CreatorComponent {
     }
     editGame() {
         for (let i = 0; i < this.game.questions.length; i++) {
-            this.slides.push(this.newSlide(this.game.questions[i].question));
+            this.slides.push(this.newSlide(this.game.questions[i].text));
             for(let j = 0; j < this.game.questions[i].options.length; j++){
-                this.getOptions(i).push(this.newOption(this.game.questions[i].options[j].text, this.game.questions[i].options[j].correctAnswer));
+                this.getOptions(i).push(this.newOption(this.game.questions[i].options[j].text, this.game.questions[i].options[j].correctAns));
             }
         }
     }
@@ -58,7 +58,7 @@ export class CreatorComponent {
     newSlide(question?: string): FormGroup {
         return this.fb.group({
             question: '' || question,
-            options: this.fb.array([])
+            option: this.fb.array([])
         })
     }
     addSlide() {
@@ -69,9 +69,9 @@ export class CreatorComponent {
     removeSlide(num: number) {
         this.slides.removeAt(num);
     }
-    get options() {
-        return this.slides.at(this.slideNum).get('options') as FormArray;
-        //return this.slideForm.get('options') as FormArray
+    get option() {
+        return this.slides.at(this.slideNum).get('option') as FormArray;
+        //return this.slideForm.get('option') as FormArray
     }
 
     newOption(option?: string, correct?: boolean): FormGroup {
@@ -81,19 +81,19 @@ export class CreatorComponent {
         });
     }
     addOption() {
-        this.options.push(this.newOption());
+        this.option.push(this.newOption());
     }
     correctOption(num: number) {
-        this.options.at(num).value['correct'] == "true" ? this.options.at(num).value['correct'] = "false" : this.options.at(num).value['correct'] = "true";
+        this.option.at(num).value['correct'] == "true" ? this.option.at(num).value['correct'] = "false" : this.option.at(num).value['correct'] = "true";
     }
     removeOption(num: number) {
-        this.options.removeAt(num);
+        this.option.removeAt(num);
     }
     // saveQuestion(){
-    //     this.question.question = this.options.value['question'];
-    //     for(let i = 0; i < this.options.controls.length; i++){
-    //         this.question.options.push(new Answer(this.options.at(i).value['text'], this.options.at(i).value['correct']));
-    //         //console.log(this.options.at(i).value);
+    //     this.question.question = this.option.value['question'];
+    //     for(let i = 0; i < this.option.controls.length; i++){
+    //         this.question.option.push(new Answer(this.option.at(i).value['text'], this.option.at(i).value['correct']));
+    //         //console.log(this.option.at(i).value);
     //     }
     //     console.log(this.slideForm2.value);
     //     //this.game.addQuestion(this.question);
@@ -102,12 +102,12 @@ export class CreatorComponent {
         this.slideNum = num;
     }
     getOptions(num: number): FormArray {
-        return this.slides.at(num).get('options') as FormArray;
+        return this.slides.at(num).get('option') as FormArray;
     }
     saveForm() {
         for (let i = 0; i < this.slides.length; i++) {
             this.question = new Question();
-            this.question.question = this.slides.at(i).value['question'];
+            this.question.text = this.slides.at(i).value['question'];
             for (let j = 0; j < this.getOptions(i).length; j++) {
                 this.question.options.push(new Answer(this.getOptions(i).at(j).value['text'], this.getOptions(i).at(j).value['correct']))
             }

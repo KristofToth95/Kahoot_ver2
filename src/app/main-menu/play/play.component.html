@@ -1,1 +1,13 @@
-<p>play works!</p>
+<form #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
+    <div class="form-group">
+        <input type="text" placeholder="Game Code" class="form-control" #GameID="ngModel" name="GameID" [(ngModel)]="formModel.GameID" required>
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="Username" class="form-control" #PlayerName="ngModel" name="PlayerName" [(ngModel)]="formModel.PlayerName" required>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-8 offset-md-2">
+            <button type="submit" [disabled]="form.invalid">Play</button>
+        </div>
+    </div>
+</form>

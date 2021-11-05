@@ -1,99 +1,57 @@
 body {
+    background-color: #272727;
+    font-family: sans-serif;
+}
+
+.wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: #232c33;
-    color: white;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 20%;
 }
 
-
-/*.content {
-    max-width: fit-content;
+.wrapped-div {
+    background: #2e3137;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
     position: relative;
-    display: flex;
-}*/
-
-.play-slider {
-    margin: 15px;
-    margin-bottom: 0px;
-    height: 200px;
-    background-color: #2b343b;
-    overflow: hidden;
-    transition: ease-in-out 0.5s;
-    border-radius: 25px;
-    box-shadow: 0 0 0 8px #4187f6;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
 }
 
-.login-slider {
-    margin: 15px;
-    height: 200px;
-    background-color: #2b343b;
-    margin-bottom: 0px;
-    overflow: hidden;
-    transition: ease-in-out 0.5s;
-    border-radius: 25px;
-    box-shadow: 0 0 0 8px #4187f6;
+.tab-header {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
-.login-slider.active {
-    height: 325px;
-}
-
-.play-slider.active {
-    height: 300px;
-}
-
-.login-slider .login-button {
-    height: 200px;
-    width: 200px;
-    background-color: #2b343b;
-    cursor: pointer;
-    z-index: 100;
-}
-
-.login-slider .login-button ion-icon {
-    height: inherit;
-    width: inherit;
+.tab-header h2.active {
     color: white;
-    transition: transform ease-in-out 0.75s;
+    border-bottom: 4px solid #04c582;
 }
 
-.login-slider.active .login-button ion-icon {
-    transform: rotate(-360deg);
-}
-
-.login-slider .login-form {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.login-slider .login-form #user-name,
-#password {
-    margin: 10px;
-}
-
-.play-slider .play-button {
-    height: 200px;
-    width: 200px;
+.tab-header h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 30px 40px 10px 40px;
     cursor: pointer;
-    z-index: 100;
-    background-color: #2b343b;
+    color: #545d6a;
+    border-bottom: 2px solid #545d6a;
 }
 
-.play-slider .play-button ion-icon {
-    height: inherit;
-    width: inherit;
-    color: white;
-    transition: transform ease-in-out 0.75s;
+.tab-header h2:focus {
+    outline: none;
 }
 
-.play-slider.active .play-button ion-icon {
-    transform: rotate(-360deg);
-}
-
-.play-slider .play-form {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.play-slider .play-form #game-code {
-    margin: 10px;
+.row .content {
+    width: 80%;
+    margin-left: 10%;
 }

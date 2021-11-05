@@ -1,7 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
-import { Game } from "../model/game.model";
-import { Model } from "../model/repository.model";
+import { Game } from "../model/shared/game.model";
+import { Model } from "../model/admin-model/repository.model";
 import { HostPopupComponent } from "./hosting/host-popup/host-popup.component";
 
 @Component({
@@ -19,7 +19,7 @@ export class UserPageComponent{
     }
 
     editGame(game: Game){
-        this.router.navigateByUrl(`/creator/edit/${game.id}`)  
+        this.router.navigateByUrl(`/creator/edit/${game.gameID}`)  
     }
 
     openModal(){
