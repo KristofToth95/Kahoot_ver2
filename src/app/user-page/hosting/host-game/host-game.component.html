@@ -1,0 +1,16 @@
+<body>
+    <ng-container *ngIf="game">
+        <div class="flag">
+            <div class="question">
+                {{counter}}
+                <label>{{question}}</label>
+            </div>
+        </div>
+        <div class="options">
+            <div class="wrapper" *ngFor="let option of options; let i = index">
+                <label>{{option.text}}</label>
+            </div>
+        </div>
+        <button (click)="nextQuestion()">Next question</button>
+    </ng-container>
+</body>

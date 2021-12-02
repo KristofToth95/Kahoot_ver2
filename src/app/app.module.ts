@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { GameLobbyComponent } from './game-pages/game-lobby/game-lobby.component';
 import { GamePageModule } from './game-pages/game-pages.module';
 import { AdminDataSource } from './model/admin-model/admin.datasource';
-import { AuthInterceptor } from './auth/auth.interceptor';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 @NgModule({
   declarations: [

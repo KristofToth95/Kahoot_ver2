@@ -1,13 +1,13 @@
 <body>
-    <div class="top-bar">
-        <div class="game-pin">
-            <div class="label">GamePin:</div>
-            <div class="game-id">{{game.gameID}}</div>
+    <div class="flag">
+        <div class="pin">
+            <label>Game Code: {{game.gameID}}</label>
         </div>
     </div>
-    <div class="lobby">
-        <div *ngFor="let user of users; let i = index">
-            <div class="users">{{user.name}}</div>
+    <div class="lobby" *ngIf="this.users">
+        <div class="wrapper" *ngFor="let user of users; let i = index">
+            <div class="users">{{user.playerName}}</div>
         </div>
     </div>
+    <button (click)="startGame()">Start Game</button>
 </body>

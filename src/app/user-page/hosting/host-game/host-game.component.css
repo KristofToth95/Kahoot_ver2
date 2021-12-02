@@ -12,33 +12,37 @@ body {
     box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
 }
 
-.flag .pin {
+.flag .question {
     color: white;
-    font-size: 5vh;
+    font-size: 4vh;
     font-weight: 300;
 }
 
-.lobby {
-    display: block;
+.options {
+    display: grid;
+    grid-template-columns: auto auto;
     margin: auto;
     background: #2e3137;
     color: white;
     width: 70%;
-    min-height: 60%;
+    min-height: 20%;
     padding: 20px;
     top: 20%;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
 }
 
-.lobby .wrapper {
+.options .wrapper {
     display: block;
-    float: left;
+    font-size: large;
+    text-align: center;
     padding: 10px;
     margin: 10px;
     border: 2px solid #04c582;
     outline: none;
     border-radius: 25px;
+    cursor: pointer;
+    transition: 0.10s;
 }
 
 button {

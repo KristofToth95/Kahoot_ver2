@@ -17,7 +17,7 @@
                         <div class="question">
                             <input id="q" class="form-control" type="text" [formControl]="slides.controls[slideNum].get('question')" placeholder="Write your question here">
                         </div>
-                        <div class="answers" formArrayName="options">
+                        <div class="answers" formArrayName="option">
                             <div class="option" *ngFor="let option of option.controls; let i = index">
                                 <div class="container-fluid">
                                     <div class="row">

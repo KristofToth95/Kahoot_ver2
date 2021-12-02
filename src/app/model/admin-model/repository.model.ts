@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { TouchSequence } from "selenium-webdriver";
 import { Game } from "../shared/game.model";
 import { User } from "../shared/user.model";
 import { AdminDataSource } from "./admin.datasource";
@@ -6,7 +7,6 @@ import { AdminDataSource } from "./admin.datasource";
 @Injectable()
 export class Model {
     private games: Game[] = new Array<Game>();
-
     private locator = (g: Game, id: number) => g.gameID == id;
 
     constructor(private dataSource: AdminDataSource) {
@@ -19,11 +19,19 @@ export class Model {
         return this.games;
     }
     getGame(id: number): Game {
-        console.log(this.games.find(p => this.locator(p, id)))
-        return this.games.find(p => this.locator(p, id));
-
+        console.log(this.games.find(g => g.gameID == id));
+        return this.games.find(g => g.gameID == id);
     }
-
+    startGame(id: number){
+        if (id != 0 || id != null) {
+            this.dataSource.startGame(id);
+        }
+    }
+    startJoining(id: number){
+        if (id != 0 || id != null) {
+            this.dataSource.startJoining(id, localStorage.getItem("connectionId").toString());
+        }
+    }
     saveGame(game: Game) {
         if (game.gameID == 0 || game.gameID == null) {
             this.dataSource.saveGame(game).subscribe(p => this.games.push(p))

@@ -1,9 +1,11 @@
+import { CommonModule } from "@angular/common";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { ModelModule } from "../model/model.module";
 import { CreatorComponent } from "./creator/creator.component";
+import { HostGameComponent } from "./hosting/host-game/host-game.component";
 import { HostPopupComponent } from "./hosting/host-popup/host-popup.component";
 import { HostingComponent } from "./hosting/hosting.component";
 import { UserPageComponent } from "./user-page.component";
@@ -13,7 +15,8 @@ import { UserPageComponent } from "./user-page.component";
         UserPageComponent,
         CreatorComponent,
         HostingComponent,
-        HostPopupComponent
+        HostPopupComponent,
+        HostGameComponent
     ],
     imports: [
         ModelModule,

@@ -32,9 +32,6 @@ export class AuthService {
         confirmPswrdCtrl.setErrors(null);
     }
   }
-  get gameID(){
-    return Number(localStorage.getItem('gameID'));
-  }
   get userID(){
     return Number(localStorage.getItem('userID'));
   }
@@ -56,7 +53,7 @@ export class AuthService {
     return this.http.post(`${this.BaseURL}/Play/JoinGame`, formData)
   }
   getGameStart(): boolean{
-    this.datasource.getGameStart(this.gameID).subscribe(
+    this.datasource.getGameStart(Number(localStorage.getItem('gameID'))).subscribe(
       (res: true) =>{
         return true;
       }

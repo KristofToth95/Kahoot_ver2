@@ -15,12 +15,12 @@ export class UserModel {
         this.dataSource.getPlayers(id).subscribe(data => {
             Object.assign(this.users, data);
         })
-        console.log(this.users);
         return this.users;
     };
     getQuestions(id: number){
         this.dataSource.getQuestions(id).subscribe(data => {
             Object.assign(this.questions, data);
+            console.log(this.questions);
         })
     }
 

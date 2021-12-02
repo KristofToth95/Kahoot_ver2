@@ -3,6 +3,7 @@ import { Form, FormArray, FormBuilder, FormControl, FormGroup } from "@angular/f
 import { ActivatedRoute, Router } from "@angular/router";
 import { Answer, Game, Question } from "src/app/model/shared/game.model";
 import { Model } from "src/app/model/admin-model/repository.model";
+import { GameLobbyComponent } from "src/app/game-pages/game-lobby/game-lobby.component";
 
 @Component({
     selector: 'creator',
@@ -17,14 +18,11 @@ export class CreatorComponent {
     editing: boolean = false;
     slideForm2 = this.fb.group({
         slides: this.fb.array([
-            this.fb.group({
-                question: '',
-                option: this.fb.array([])
-            })
+            
         ])
     });
 
-    constructor(private fb: FormBuilder, private router: Router, activeRoute: ActivatedRoute, model: Model) {
+    constructor(private fb: FormBuilder, private router: Router, activeRoute: ActivatedRoute, private model: Model) {
         
         activeRoute.params.subscribe(params => {
             this.editing = params["mode"] == "edit";
@@ -35,17 +33,25 @@ export class CreatorComponent {
         if (this.editing) {
             this.editGame();
         } else{
-            this.defaultOptions();
-        }
-
+            console.log(this.game);
+            this.slides.push(this.fb.group({
+                question: new FormControl(''),
+                option: this.fb.array([])
+            }))
+            this.defaultOptions(); 
+        }  
     }
     editGame() {
+        console.log(this.slideForm2.value)
         for (let i = 0; i < this.game.questions.length; i++) {
+           // this.slides[i].setValue(this.newSlide(this.game.questions[i].text));
             this.slides.push(this.newSlide(this.game.questions[i].text));
             for(let j = 0; j < this.game.questions[i].options.length; j++){
                 this.getOptions(i).push(this.newOption(this.game.questions[i].options[j].text, this.game.questions[i].options[j].correctAns));
             }
         }
+        console.log(this.slideForm2.value);
+    
     }
     defaultOptions() {
         for (let i = 0; i < this.defaultOptionNum; i++) {
@@ -112,6 +118,8 @@ export class CreatorComponent {
                 this.question.options.push(new Answer(this.getOptions(i).at(j).value['text'], this.getOptions(i).at(j).value['correct']))
             }
             console.log(this.question);
+            this.game.questions.push(this.question);
         }
+        this.model.saveGame(this.game);
     }
 }

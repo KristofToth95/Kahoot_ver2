@@ -4,7 +4,7 @@
             <th colspan="2">Which game would you like to host?</th>
             <tr *ngFor="let game of games; let i = index">
                 <td class="game-name">{{game.name}}</td>
-                <td class="edit"><button class="edit-button" (click)="host(game.id)">Host</button></td>
+                <td class="edit"><button class="edit-button" (click)="host(game.gameID)">Host</button></td>
             </tr>
         </table>
     </div>
